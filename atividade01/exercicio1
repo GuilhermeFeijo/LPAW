@@ -1,0 +1,81 @@
+<head>
+    <style>
+        /* POSICIONAMENTO */
+        html,body {
+        height:100%;
+        width:100%;
+        margin:0;
+        }
+        body {
+        display:flex;
+        }
+        .container {
+        margin:auto;
+        }
+        .input-group, .button-group{
+            margin: 10px;
+        }
+        button{
+            display: flex;
+            margin: auto;
+            padding: 20px;
+            border: 0px;
+            background-color: grey;
+            width: 120px;
+            justify-content: center;
+        }
+
+        /* DEFINIÇÕES CAMPOS */
+        label{
+            display: flex;
+            visibility: hidden;
+            font-size: large;
+            justify-content: center;
+            transform: translateY(20px);
+        }
+        input{
+            border: none;
+            border-bottom: 1px solid black;
+            width: 400px;
+        }
+        ::placeholder{
+            text-align: center;
+            color: black;
+        }
+
+        /* DEFINIÇÕES TRANSIÇÃO */
+        input:focus{
+            outline: none;
+            border-bottom: 2px solid black;
+        }
+        input:focus::placeholder {
+            display: none;
+            visibility: hidden;
+        }
+        .input-group:focus-within label{
+            visibility: visible;
+            transform: translateY(0px);
+            transition: all 50ms ease;
+        }
+        button:hover{
+            background-color: rgb(22, 22, 36);
+            transition: all 0.5s linear;
+            color: white;
+            box-shadow: 0px 0px 10px 0 black;
+        }
+
+    </style>
+</head>
+<div class="container">
+    <div class="input-group">
+        <label for="login">Username:</label>
+        <input id="login" type="text" name="login" placeholder="Username">
+    </div>
+    <div class="input-group">
+        <label for="password">Password:</label>
+        <input id="password" type="password" name="login" placeholder="Password">
+    </div>
+    <div class="button-group">
+        <button>Enter</button>
+    </div>
+</div>
