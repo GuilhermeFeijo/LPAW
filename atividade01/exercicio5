@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSTI-4SEM-LPAW-Aula 01 | CSS3 Animação: Exemplo 12</title>
+    <style>
+        .loader {
+            width: 200px; /* largura da barra de carregamento */
+            height: 20px; /* altura da barra de carregamento */
+            background: linear-gradient(to right, #fff 0%, #fff 50%, rgb(255, 0, 0) 50%, rgb(255, 0, 0) 100%); /* gradiente de esquerda para direita */
+            background-size: 200% 100%; /* tamanho do gradiente (200% para cobrir toda a largura da barra de carregamento) */
+            animation: fill 5s linear forwards; /* animação para preencher a barra de carregamento */
+            border: 2px solid gray;
+            animation-play-state: paused;
+        }
+
+        .loader:hover {
+            animation-play-state: running;
+        }
+
+        @keyframes fill {
+            0% {
+                background-position: 0 0; /* início do gradiente à esquerda */
+            }
+            100% {
+                background-position: -100% 0; /* final do gradiente à direita */
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="loader">
+        <div></div>
+    </div>
+</body>
+
+</html>

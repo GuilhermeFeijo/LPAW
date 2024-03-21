@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>CSTI-4SEM-LPAW-Aula 01 | CSS3 Animação: Exemplo 09</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+            .loader{
+                height: 100px;
+                width: 100px;
+                border-top: 20px solid #000000;
+                border-right: 20px solid #000000;
+                border-bottom: 20px solid #c9c9c9;
+                border-left: 20px solid #c9c9c9;
+                border-radius: 50%;
+                display: inline-block;
+                background-size: contain;
+                animation-name: loading;
+                animation-duration: 500ms;
+                animation-timing-function:linear;
+                /*animation-timing-function: linear;*/
+                animation-iteration-count: infinite;
+                animation-play-state: running;
+            }
+
+            .loader::after{
+                border: 15px solid #d40000; /* Adicione uma borda de 10px e cor preta */
+            }
+
+            @keyframes loading {
+                0%{ transform: rotate(0deg);}
+                25%{ transform: rotate(90deg);}
+                50%{ transform: rotate(180deg);}
+                75%{ transform: rotate(270deg);}
+                100%{ transform: rotate(360deg);}
+            }
+        </style>
+    </head>
+    <body>
+        <div class="loader"></div>
+    </body>
+</html>
