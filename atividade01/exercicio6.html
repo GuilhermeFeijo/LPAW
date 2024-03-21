@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CSTI-4SEM-LPAW-Aula 01 | CSS3 Animação: Exemplo 10</title>
+    <meta name="description" content=" ">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .goblin-down,
+        .goblin-right {
+            background-image: url('goblin_big.png');
+            background-size: 480px 730px;
+            width: 160px;
+            height: 180px;
+            background-repeat: no-repeat;
+            background-clip: content-box;
+            background-position: 0px 0px;
+        }
+
+        .goblin-down {
+            animation: goblin-down 500ms step-end forwards;
+        }
+
+        .goblin-right {
+            animation: goblin-right 500ms step-end forwards;
+            animation-delay: 500ms; /* Atraso para iniciar após o término da animação do primeiro goblin */
+            opacity: 0; /* Inicialmente oculto */
+        }
+
+        @keyframes goblin-down {
+            0% { background-position: 0px 0px; transform: translateY(0px); }
+            25% { background-position: -170px 0px; transform: translateY(40px); }
+            50% { background-position: -330px 0px; transform: translateY(80px); }
+            75% { background-position: -170px 0px; transform: translateY(160px); }
+            100% { background-position: 0px 0px; transform: translateY(240px); display: none; }
+        }
+
+        @keyframes goblin-right {
+            0%{ background-position: 0px -370px; transform: translateY(240px); opacity: 1; }
+            25% { background-position: -170px -370px; transform: translate(40px, 240px); }
+            50% { background-position: -330px -370px; transform: translate(80px, 240px);  }
+            75% { background-position: -170px -370px; transform: translate(160px, 240px); }
+            100% { background-position: 0px -370px; transform: translate(240px, 240px); display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="goblin-down"></div>
+        <div class="goblin-right"></div>
+        <div class="goblin-up"></div>
+        <div class="goblin-left"></div>
+    </div>
+</body>
+</html>
