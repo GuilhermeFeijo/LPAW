@@ -14,8 +14,11 @@
             justify-content: center;
         }
 
+
         .goblin-down,
-        .goblin-right {
+        .goblin-right,
+        .goblin-up,
+        .goblin-left {
             background-image: url('goblin_big.png');
             background-size: 480px 730px;
             width: 160px;
@@ -35,21 +38,58 @@
             opacity: 0; /* Inicialmente oculto */
         }
 
+        .goblin-up {
+            animation: goblin-up 500ms step-end forwards;
+            animation-delay: 1000ms; /* Atraso para iniciar após o término da animação do primeiro goblin */
+            opacity: 0; /* Inicialmente oculto */
+        }
+
+        .goblin-left {
+            animation: goblin-left 500ms step-end forwards;
+            animation-delay: 1500ms; /* Atraso para iniciar após o término da animação do primeiro goblin */
+            opacity: 0; /* Inicialmente oculto */
+        }
+
         @keyframes goblin-down {
             0% { background-position: 0px 0px; transform: translateY(0px); }
-            25% { background-position: -170px 0px; transform: translateY(40px); }
-            50% { background-position: -330px 0px; transform: translateY(80px); }
-            75% { background-position: -170px 0px; transform: translateY(160px); }
-            100% { background-position: 0px 0px; transform: translateY(240px); display: none; }
+            20% { background-position: -170px 0px; transform: translateY(30px); }
+            40% { background-position: -330px 0px; transform: translateY(60px); }
+            60% { background-position: -170px 0px; transform: translateY(90px); }
+            80% { background-position: -330px 0px; transform: translateY(120px); }
+            99% { background-position: 0px 0px; transform: translateY(150px);}
+            100% { display: none; }
         }
 
         @keyframes goblin-right {
-            0%{ background-position: 0px -370px; transform: translateY(240px); opacity: 1; }
-            25% { background-position: -170px -370px; transform: translate(40px, 240px); }
-            50% { background-position: -330px -370px; transform: translate(80px, 240px);  }
-            75% { background-position: -170px -370px; transform: translate(160px, 240px); }
-            100% { background-position: 0px -370px; transform: translate(240px, 240px); display: none; }
+            0%{ background-position: 0px -370px; transform: translateY(150px); opacity: 1; }
+            20% { background-position: -170px -370px; transform: translate(30px, 150px); }
+            40% { background-position: -330px -370px; transform: translate(60px, 150px);  }
+            60% { background-position: -170px -370px; transform: translate(90px, 150px); }
+            80% { background-position: -330px -370px; transform: translate(120px, 150px);  }
+            99% { background-position: 0px -370px; transform: translate(150px, 150px); }
+            100% {display: none; }
         }
+
+        @keyframes goblin-up {
+            0% { background-position: 0px -180px; transform: translate(150px, 150px); opacity: 1;}
+            20% { background-position: -170px -180px; transform: translate(150px, 120px); }
+            40% { background-position: -330px -180px; transform: translate(150px, 90px); }
+            60% { background-position: -170px -180px; transform: translate(150px, 60px); }
+            80% { background-position: -330px -180px; transform: translate(150px, 30px); }
+            99% { background-position: 0px -180px; transform: translate(150px, 0px);}
+            100% { display: none; }
+        }
+
+        @keyframes goblin-left {
+            0%{ background-position: 0px -550px; transform: translateX(150px); opacity: 1; }
+            20% { background-position: -170px -550px; transform: translateX(120px); }
+            40% { background-position: -330px -550px; transform: translateX(90px);  }
+            60% { background-position: -170px -550px; transform: translateX(60px); }
+            80% { background-position: -330px -550px; transform: translateX(30px);  }
+            99% { background-position: 0px -550px; transform: translateX(0px); }
+            100% {display: none; }
+        }
+
     </style>
 </head>
 <body>
